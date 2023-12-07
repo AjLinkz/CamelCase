@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner kbInput = new Scanner(System.in);
+// declarations  
+    String word;
+    int i;
+// prompting user
+    System.out.print("Enter a word: ");
+    word = kbInput.nextLine().toLowerCase();
+// declaration for word2
+    String word2 = "";
+// for loop for camelCase
+    for (i = 0; i < word.length(); i++) {
+      if (word.substring(i, i + 1).equals(" ")) {
+        word2 += word.substring(i + 1, i + 2).toUpperCase();
+        i++;
+      } else {
+        word2 += word.substring(i, i + 1);
+      }
+    }
+    System.out.print(word2);
+// Closes
+      kbInput.close();
+  }
+}
